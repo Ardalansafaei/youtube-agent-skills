@@ -1,40 +1,44 @@
 # yt-image prompt optimizer (Pollinations)
 
 **Canonical character:** `character/CHARACTER.md` + `character/model-sheet.jpg`  
-Face + hair + 2D style are locked. **Outfit changes with the environment** (`character/outfits.json`).
+Face + hair + **3D Pixar/Disney** style are locked. **Outfit and environment change every beat.**
 
 Rewrite concepts in English unless the user requires Persian. Always **prepend** `lock_prefix.txt`, add matching **outfit**, **append** `lock_negatives.txt`.
 
-## Formula (order matters)
+## Formula — timeline stills (order matters)
 
-1. **Character lock prefix** (face/hair/style — required)
-2. **Outfit for this scene** (from `outfits.json` — required)
-3. **Shot type** — educational still 1920×1080 / thumbnail 1280×720
-4. **Beat concept** — from `[ON SCREEN]` or spoken window
-5. **Expression** — neutral, happy, thinking, surprised, curious, concerned, sad, explaining, confident, calm
-6. **Scene** — desk / whiteboard / therapy / study / brain / cafe / outdoor / …
-7. **Optional pink brain sidekick** — teaching/explaining only
-8. **Negatives** — lock_negatives (do not forbid outfit change)
+1. Character lock prefix (3D face/hair/style)
+2. Outfit for this scene (`outfits.json`)
+3. Shot size: Educational YouTube still 1920×1080 16:9
+4. **Unique** camera + environment + action from the beat / `[ON SCREEN]`
+5. Expression matching the emotion
+6. Lighting that fits the place (not always soft even desk light)
+7. Negatives
 
-## Thumbnail template
+## Anti-repetition
+
+- Change environment **or** action every still; prefer both.
+- Never reuse the exact desk-laptop pose for adjacent beats.
+- Background people only as soft silhouettes when needed.
+
+## Thumbnail formula (1280×720 collage)
+
+Match `character/thumb-reference.jpg`:
 
 ```text
-{lock_prefix} YouTube thumbnail frame 1280x720 16:9, same host character close-up or MCU, [expression], high contrast for feed, [optional bold text "WORD WORD"], {lock_negatives}
+{lock_prefix} YouTube thumbnail 1280x720 16:9, high-contrast feed design,
+RIGHT side: large hero MCU of same 3D host [calm thoughtful pose],
+LEFT/background: 3-4 vignette panels or thought-bubbles of the SAME character in different emotional beats
+(phone stress with scribble bubble, crowded social anxiety, sad overwhelm, calm eyes-closed heart bubble),
+BOLD readable title text on the free side: short punch line + one accent word on yellow paint stroke if needed,
+thin subtitle optional, cinematic warm lighting, {lock_negatives}
 ```
 
-## Educational still template (every 6s)
+Do not ship single empty-space thumbs without vignettes and bold title text.
 
-```text
-{lock_prefix} Educational YouTube still 1920x1080 16:9, [concept from ON SCREEN], half-body or full-body, [expression], [allowed scene], soft even lighting, {lock_negatives}
-```
+## Checklist
 
-## Timeline stills
-
-Use `scripts/build_still_prompts.py` (already injects the character lock). You may tighten the **concept** words only — do not remove the character lock or change outfit/hair.
-
-## Rewrite checklist
-
-- [ ] Character lock present (lavender sweatshirt + dark half-up bun + 2D)
-- [ ] 16:9 size correct (1920×1080 still / 1280×720 thumb)
-- [ ] One expression + one scene
-- [ ] Not photoreal / not a different person
+- [ ] 3D Pixar lock (not flat 2D / not photoreal)
+- [ ] 16:9 size correct
+- [ ] Unique scene per still
+- [ ] Thumb = hero + vignettes + bold text

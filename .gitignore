@@ -1,6 +1,8 @@
 .env
 **/.env
 **/*.env
+**/POLLINATIONS_KEYS.md
+**/.pollinations_key_index
 **/__pycache__/
 *.pyc
 .DS_Store

@@ -1,37 +1,36 @@
 # Channel character lock — Psychiatry Learning Companion
 
-**Canonical reference:** `model-sheet.jpg`  
-Face, hair, art style stay fixed. **Outfit changes with the environment.**
+**Canonical reference:** `model-sheet.jpg` (+ `model-sheet-alt.jpg`)  
+Face, hair, and **3D Pixar-style** art stay fixed. **Outfit and environment change every beat.**
 
 ## Fixed identity
-- Young woman host, clean modern **2D** illustration
-- Long wavy dark brown hair, half-up messy bun
-- Large expressive dark eyes, soft friendly face
-- Palette family: lavender `#7B6CF6`, pink `#E8A5C4`, sage `#A8C5A0`, cream `#F2E5D3`, charcoal `#333333`
-- Optional sidekick: cute pink brain (teaching/explaining beats)
+- Young woman host, clean modern **3D CGI / Pixar-Disney** look (not flat 2D, not photoreal)
+- Long voluminous dark brown wavy hair, messy half-up top bun, loose waves framing face
+- Large expressive brown eyes, light freckles, soft friendly face
+- Palette: lavender `#7B6CF6`, lilac, sage `#A8C5A0`, cream `#F2E5D3`, teal accents, charcoal `#333333`
+- Optional sidekick: cute pink brain (teaching/explaining beats only)
 
 ## Outfit by environment (required)
 
 | Scene / environment | Outfit |
 |---------------------|--------|
-| Desk / talking at home | Cozy lavender knit or lilac crewneck, dark pants |
-| Whiteboard / teaching | Lilac or cream blouse + soft purple cardigan, dark tailored pants |
-| Therapy room | Sage or cream cardigan over light top, charcoal pants |
-| Study / notes | Oversized lavender hoodie/sweatshirt, dark pants, white sneakers |
-| Inside-the-brain metaphor | Fitted lavender top, dark pants; pink brain sidekick OK |
-| Cafe | Cream top + lilac cardigan, dark pants, sneakers |
-| Outdoor | Lavender jacket/cardigan over cream tee, dark jeans |
-| Formal / interview energy | Lilac blouse ± soft blazer, charcoal trousers |
-| Sleep / night anxiety | Soft lavender loungewear |
-| Exercise / body cues | Light athletic lavender + charcoal |
+| Desk / home | Oversized lavender ribbed crewneck sweater, dark charcoal high-waist pants |
+| Party / crowded room | Same lavender sweater or lilac cardigan, dark jeans, anxious body language |
+| Meeting / office | Soft lilac blouse or lavender knit, charcoal pants |
+| Cafe / outdoor | Cream top + lilac cardigan OR lavender jacket over cream tee, dark jeans |
+| Therapy / calm teach | Sage or cream cardigan over light top, charcoal pants |
+| Study / notes | Oversized lavender hoodie/sweatshirt, dark pants |
+| Night / bed / hangover | Soft lavender loungewear |
+| Phone / texting | Lavender crewneck, close-up phone in hands |
+| Parking / commute | Lavender sweater under light coat, dark pants |
 
-Always stay in the pastel lavender/sage/cream/charcoal family — change the **cut**, not the brand identity.
+Always stay in the pastel lavender/sage/cream/charcoal family — change the **cut and setting**, never the face/hair.
+
+## Shot rules (anti-repetition)
+1. Every still needs a **unique environment + action + camera angle**.
+2. Do not reuse the same desk-laptop pose for adjacent beats.
+3. Social scenes may show **blurred background people** — never extra sharp faces competing with the host.
+4. Prepend `lock_prefix.txt`, add outfit from `outfits.json`, append `lock_negatives.txt`.
 
 ## Expressions
-neutral · happy · thinking · surprised · curious · concerned · sad · explaining · confident · calm
-
-## Prompt rules
-1. Prepend `lock_prefix.txt` (face/hair/style only — no fixed outfit).
-2. Add the outfit line that matches the scene.
-3. Append `lock_negatives.txt`.
-4. `build_still_prompts.py` picks outfit from `outfits.json` using ON SCREEN / concept keywords.
+neutral · happy · thinking · surprised · curious · concerned · anxious · sad · explaining · confident · calm · relieved
