@@ -87,6 +87,14 @@ yt-image:
 - [ ] PUTER_AUTH_TOKEN in .env (not committed)
 ```
 
+## Optional thumb backend — Cloudflare Workers AI
+
+User API token prefix `cfut_` plus a separate **Account ID** (email alone is not enough).  
+Model: `@cf/black-forest-labs/flux-1-schnell`.  
+Do **not** send `width`/`height` (API returns 400). Output is square **1024×1024**, not 1280×720.  
+On-image text still must name the real topic; long sentences garble — keep the exact short phrase (`7 SIGNS OF SOCIAL ANXIETY`, `SOCIAL ANXIETY VS SHYNESS`, `3 SKILLS FOR SOCIAL ANXIETY`).  
+Store `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` only in local `.env`. Never commit them.
+
 ## Failure
 
 Pollinations 402 → next pollen key.  
