@@ -21,20 +21,21 @@ Rewrite concepts in English unless the user requires Persian. Always **prepend**
 - Never reuse the exact desk-laptop pose for adjacent beats.
 - Background people only as soft silhouettes when needed.
 
-## Thumbnail formula (1280×720 collage)
+## Thumbnail formula (OpenAI only — 1280×720)
 
-Match `character/thumb-reference.jpg`:
+**Backend:** `generate_thumb_openai.py` (never Pollinations for thumbs).
+
+Lead with **accurate topic + exact on-image text + layout + emotion**. Match `thumb-reference.jpg`.
+
+**Accuracy rule:** on-image words must name the real subject (`SOCIAL ANXIETY`, etc.) and the real deliverable (signs / vs shyness / skills). Never ship vague text like only `7 SIGNS` with no topic. Vignettes must match beats that exist in the script.
 
 ```text
-{lock_prefix} YouTube thumbnail 1280x720 16:9, high-contrast feed design,
-RIGHT side: large hero MCU of same 3D host [calm thoughtful pose],
-LEFT/background: 3-4 vignette panels or thought-bubbles of the SAME character in different emotional beats
-(phone stress with scribble bubble, crowded social anxiety, sad overwhelm, calm eyes-closed heart bubble),
-BOLD readable title text on the free side: short punch line + one accent word on yellow paint stroke if needed,
-thin subtitle optional, cinematic warm lighting, {lock_negatives}
+YouTube thumbnail 1280x720 about [exact topic from the video].
+RIGHT/LEFT: giant MCU of 3D Pixar young woman (dark messy half-up bun, freckles, big brown eyes) [emotion/pose], cinematic warm light.
+Opposite side: exact bold text "[ACCURATE CONTENT PHRASE]" — power words on bright yellow paint stroke, perfect spelling, phone-readable.
+2 soft circular thought-bubbles of the SAME girl showing [real script beats].
+High contrast, no tiny subtitle paragraphs, not photoreal, not flat 2D.
 ```
-
-Do not ship single empty-space thumbs without vignettes and bold title text.
 
 ## Checklist
 

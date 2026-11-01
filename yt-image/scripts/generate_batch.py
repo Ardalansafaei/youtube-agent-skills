@@ -13,6 +13,21 @@ from datetime import datetime
 from pathlib import Path
 
 GENERATE = Path(__file__).resolve().with_name("generate.py")
+GENERATE_THUMB_PUTER = Path(__file__).resolve().with_name("generate_thumb_puter.mjs")
+GENERATE_THUMB_OPENAI = Path(__file__).resolve().with_name("generate_thumb_openai.py")
+
+
+def _has_puter_token() -> bool:
+    if (os.environ.get("PUTER_AUTH_TOKEN") or "").strip():
+        return True
+    env_path = Path(__file__).resolve().parents[1] / ".env"
+    if not env_path.is_file():
+        return False
+    for raw in env_path.read_text(encoding="utf-8").splitlines():
+        line = raw.strip()
+        if line.startswith("PUTER_AUTH_TOKEN=") and line.split("=", 1)[1].strip().strip('"').strip("'"):
+            return True
+    return False
 
 
 def load_prompts(path: Path) -> list[dict]:
@@ -90,24 +105,59 @@ def main() -> int:
             width, height = 1280, 720
         else:
             width, height = int(args.width), int(args.height)
-        cmd = [
-            sys.executable,
-            str(GENERATE),
-            prompt,
-            "--out",
-            str(out),
-            "--name",
-            name,
-            "--width",
-            str(width),
-            "--height",
-            str(height),
-            "--model",
-            args.model,
-        ]
-        if item.get("seed") is not None:
-            cmd.extend(["--seed", str(item["seed"])])
-        print(f"[{i}/{len(items)}] {name}", flush=True)
+        # Thumbnails → Puter (free OpenAI GPT Image) preferred; OpenAI direct fallback
+        # Stills → Pollinations
+        if str(name).lower().startswith("thumb"):
+            if _has_puter_token() and GENERATE_THUMB_PUTER.is_file():
+                cmd = [
+                    "node",
+                    str(GENERATE_THUMB_PUTER),
+                    "--prompt",
+                    prompt,
+                    "--out",
+                    str(out),
+                    "--name",
+                    name,
+                    "--width",
+                    str(width),
+                    "--height",
+                    str(height),
+                    "--model",
+                    "gpt-image-2.5-flare",
+                ]
+                print(f"[{i}/{len(items)}] {name} (puter thumb)", flush=True)
+            else:
+                cmd = [
+                    sys.executable,
+                    str(GENERATE_THUMB_OPENAI),
+                    prompt,
+                    "--out",
+                    str(out),
+                    "--name",
+                    name,
+                    "--size",
+                    f"{width}x{height}",
+                ]
+                print(f"[{i}/{len(items)}] {name} (openai thumb)", flush=True)
+        else:
+            cmd = [
+                sys.executable,
+                str(GENERATE),
+                prompt,
+                "--out",
+                str(out),
+                "--name",
+                name,
+                "--width",
+                str(width),
+                "--height",
+                str(height),
+                "--model",
+                args.model,
+            ]
+            if item.get("seed") is not None:
+                cmd.extend(["--seed", str(item["seed"])])
+            print(f"[{i}/{len(items)}] {name}", flush=True)
         proc = subprocess.run(cmd, capture_output=True, text=True)
         entry = {
             "name": name,

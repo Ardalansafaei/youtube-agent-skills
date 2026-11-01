@@ -44,8 +44,8 @@ Upload thumbnails = **1280×720**. Never square/vertical for long-form unless us
 
 **Character (mandatory):** locked host in `yt-image/character/` — **3D Pixar/Disney** face/hair from model sheet (not flat 2D, not photoreal).  
 **Outfit + environment change every beat** (see `outfits.json` + scene recipes). Anti-repetition: vary camera/lighting/action.  
-**Thumbnails:** collage style (hero + vignettes + bold text) per `yt-image` + `thumb-reference.jpg`.  
-**API keys:** `yt-image/POLLINATIONS_KEYS.md` with auto-rotate on 402 (local only; not committed).
+**Thumbnails:** Puter.js `txt2img` (GPT Image via User-Pays) — `generate_thumb_puter.mjs`; collage + ≤3-word punch text. Never Pollinations for thumbs.  
+**Stills API:** `yt-image/POLLINATIONS_KEYS.md` (rotate on 402). **Thumb auth:** `PUTER_AUTH_TOKEN` in `yt-image/.env` from puter.com/dashboard#account (local only).
 
 Example: ~60s script → ~10 stills; ~10 min → ~100 stills.  
 On pollen `402`, stop and report how many finished — keep `prompts.txt`.

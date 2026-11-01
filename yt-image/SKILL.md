@@ -2,11 +2,11 @@
 name: yt-image
 description: >-
   Build one Pollinations image prompt every 6 seconds of the YouTube script,
-  then generate stills at standard YouTube 16:9 video size 1920×1080; thumbnails
-  at 1280×720. Default image backend for yt-agent.
+  then generate stills at 1920×1080; thumbnails at 1280×720 via Puter.js
+  (free OpenAI GPT Image) with optional direct-OpenAI fallback.
 ---
 
-# yt-image (Pollinations) — YouTube-standard sizes + locked character
+# yt-image — stills (Pollinations) + thumbs (Puter → OpenAI)
 
 ## Character (mandatory)
 
@@ -18,44 +18,55 @@ Canonical host: `character/model-sheet.jpg` (+ `model-sheet-alt.jpg`) + `charact
 Face + hair locked (messy dark-brown half-up bun, freckles, large brown eyes).  
 **Outfit and environment change every beat** via `outfits.json` + scene library in `build_still_prompts.py`.
 
-Approved look reference: party/exit sample quality (`sample-preview` style) — unique environment per beat, same face.
-
 ## Anti-repetition (mandatory for stills)
 
 Every still must change **at least two** of: environment, action/pose, camera angle, lighting.  
-Never chain the same desk-laptop pose. Social beats may use soft out-of-focus background people; no competing sharp faces.
+Never chain the same desk-laptop pose.
 
 ## Size rules (mandatory)
 
-| Asset | Size | Aspect | Notes |
-|-------|------|--------|-------|
-| **Timeline stills / B-roll** (every 6s) | **1920×1080** | 16:9 | Matches standard YouTube video (1080p) |
-| **Upload thumbnail** | **1280×720** | 16:9 | YouTube recommended thumbnail |
+| Asset | Size | Aspect | Backend |
+|-------|------|--------|---------|
+| **Timeline stills** (every 6s) | **1920×1080** | 16:9 | Pollinations (`generate.py`) |
+| **Upload thumbnail** | **1280×720** | 16:9 | **Puter.js** `puter.ai.txt2img` → GPT Image (`generate_thumb_puter.mjs`) |
 
-**Always 16:9.** Do not use square/vertical for long-form unless user asks Shorts.
+**Always 16:9.** `thumb_*` lines in `generate_batch.py` route to Puter when `PUTER_AUTH_TOKEN` is set; otherwise fall back to direct OpenAI.
 
-Names starting with `thumb` in `prompts.txt` auto-render at **1280×720**.
+## Thumbnails via Puter (preferred — free OpenAI GPT Image)
 
-## Thumbnail formula (mandatory — collage style)
+Docs: https://developer.puter.com/tutorials/free-unlimited-openai-api/
 
-Match `character/thumb-reference.jpg` (psychology / emotional-control collage):
+No OpenAI billing key required. User-Pays via Puter account.
 
-1. **Hero:** same locked 3D host, large on the right (or left), MCU/close, chin-on-hand or strong emotional pose, cinematic warm light.
-2. **Vignettes:** 3–4 smaller frames / thought-bubbles of the **same** character in different emotional beats (phone stress, crowd anxiety, calm/peace, etc.).
-3. **Text:** bold readable YouTube title words on the opposite side — short punch line + one yellow/paint accent word if needed; optional thin subtitle.
-4. Size **1280×720**. High feed contrast. Same face in every panel.
+```powershell
+# one-time: npm install inside yt-image/scripts (uses @heyputer/puter.js)
+# token from https://puter.com/dashboard#account → yt-image/.env as PUTER_AUTH_TOKEN=
 
-Do **not** ship plain single-pose thumbs with empty text space only.
+node "$env:USERPROFILE\.claude\skills\yt-image\scripts\generate_thumb_puter.mjs" `
+  --file "$thumb\prompts.txt" --out $thumb `
+  --model gpt-image-2.5-flare --width 1280 --height 720
+```
 
-## Timing rule
+Models: `gpt-image-2.5-flare` (default) · `gpt-image-2.5-sunburst` · `gpt-image-2` · `gpt-image-1.5`  
+Optional: `--browser-auth` once if no token yet.
 
-One educational-still prompt **every 6 seconds** of spoken runtime (150 WPM) → **1920×1080**.
+### Thumbnail formula (mandatory)
 
-## API
+Match `character/thumb-reference.jpg`:
 
-- Keys: `POLLINATIONS_KEYS.md` — on `402` / empty pollen, rotate via `.pollinations_key_index`
-- Fallback: `.env` → `POLLINATIONS_API_KEY`
-- Model: **flux**
+1. Scroll-stop hero MCU on one third; text on the other.
+2. 2–3 soft thought-bubble vignettes of the **same** character — vignettes must show **real beats from this video**, not random mood shots.
+3. **On-image text must name the actual topic accurately** (e.g. `SOCIAL ANXIETY`, not vague `7 SIGNS` alone). State the deliverable: signs / vs shyness / skills. Yellow paint stroke on the power phrase. Short enough for phone feed, but never misleading or incomplete.
+4. Prompt = accurate topic + exact on-image text + layout + emotion. Do not invent claims the script does not make.
+
+## Stills API (Pollinations)
+
+- Keys: `POLLINATIONS_KEYS.md` — rotate on `402`
+- Model: **flux** · size **1920×1080**
+
+## Fallback (direct OpenAI)
+
+Only if Puter token missing: `generate_thumb_openai.py` + `OPENAI_KEYS.md` / `OPENAI_API_KEY`.
 
 ## Required flow
 
@@ -64,20 +75,20 @@ $run = Join-Path $env:USERPROFILE ("Downloads\yt-images\" + (Get-Date -Format "y
 New-Item -ItemType Directory -Force -Path $run | Out-Null
 python "$env:USERPROFILE\.claude\skills\yt-image\scripts\build_still_prompts.py" --file "$run\script.txt" --out $run --every 6
 python "$env:USERPROFILE\.claude\skills\yt-image\scripts\generate_batch.py" "$run\prompts.txt" --out $run --width 1920 --height 1080
+node "$env:USERPROFILE\.claude\skills\yt-image\scripts\generate_thumb_puter.mjs" --file "$run\thumb_prompts.txt" --out $run --model gpt-image-2.5-flare
 ```
-
-Thumbnails: append `thumb_*|…` lines (collage formula above) then generate — auto **1280×720**.
 
 ## Checklist
 
 ```
 yt-image:
-- [ ] 3D Pixar lock (not flat 2D)
-- [ ] stills every 6s at 1920×1080, unique scene each beat
-- [ ] thumbs 1280×720 collage (hero + vignettes + bold text)
-- [ ] generate_batch done / pollen errors reported honestly
+- [ ] stills: Pollinations 1920×1080
+- [ ] thumbs: Puter GPT Image 1280×720 collage + ≤3-word text
+- [ ] PUTER_AUTH_TOKEN in .env (not committed)
 ```
 
 ## Failure
 
-402 / empty pollen → next key in `POLLINATIONS_KEYS.md`; if all fail, keep prompts + finished files; never Arena; never wrong aspect for YouTube long-form.
+Pollinations 402 → next pollen key.  
+Puter auth missing → ask for token / `--browser-auth`.  
+Do **not** silently fall thumbs back to Pollinations.
