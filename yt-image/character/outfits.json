@@ -1,0 +1,22 @@
+{
+  "default": "cozy oversized lavender lilac crewneck sweatshirt, dark charcoal pants, white sneakers",
+  "by_scene": {
+    "desk": "soft lavender knit sweater or cozy lilac crewneck, dark pants, at home desk look",
+    "talking": "soft lavender knit sweater or cozy lilac crewneck, dark pants",
+    "whiteboard": "smart casual teaching look: light lilac or cream blouse under a soft purple cardigan, dark tailored pants, clean sneakers or simple flats",
+    "teaching": "smart casual teaching look: light lilac or cream blouse under a soft purple cardigan, dark tailored pants",
+    "therapy": "calm therapist-adjacent cozy look: soft sage or cream cardigan over a light top, charcoal or warm gray pants, soft indoor slippers or simple flats",
+    "therapy room": "calm cozy look: soft sage or cream cardigan over a light top, charcoal pants",
+    "study": "relaxed study fit: oversized lavender hoodie or sweatshirt, dark joggers or pants, white sneakers, notebook vibes",
+    "notes": "relaxed study fit: oversized lavender hoodie, dark pants, white sneakers",
+    "brain": "slightly stylized explanatory outfit: fitted lavender top with soft purple accents, dark pants, optional small pink brain sidekick nearby",
+    "inside the brain": "slightly stylized explanatory outfit: fitted lavender top, dark pants, optional pink brain sidekick",
+    "outdoor": "light lavender jacket or cardigan over a cream tee, dark jeans, white sneakers",
+    "cafe": "casual cute cafe look: cream top under a lilac cardigan, dark pants, white sneakers",
+    "formal": "polished soft formal: lilac blouse, dark blazer optional, charcoal trousers, simple flats",
+    "sleep": "soft loungewear: lavender matching set or oversized tee and pants, cozy socks",
+    "exercise": "light athletic wear in lavender and charcoal, sneakers",
+    "cold": "lavender sweater under a soft coat, scarf optional, dark pants, boots or sneakers"
+  },
+  "palette_note": "Keep lavender/lilac/sage/cream/charcoal family even when outfit changes; never random neon or unrelated brands."
+}
