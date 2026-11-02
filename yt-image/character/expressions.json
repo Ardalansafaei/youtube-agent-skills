@@ -1,0 +1,133 @@
+{
+  "version": 1,
+  "rule": "Every still MUST include a concrete facial-expression block from this catalog. Never leave a calm default smile on fear/shame/anxiety beats. Face identity stays locked; only muscles/gaze/brows change.",
+  "default": "explaining",
+  "priority_note": "Higher priority wins over longer keyword. Distress faces outrank teach/brave defaults.",
+  "expressions": {
+    "fear": {
+      "priority": 100,
+      "prompt": "afraid facial expression: wide tense eyes, raised inner brows, tight pressed lips, pale tension in cheeks, slight lean-back, visible worry in gaze — NOT smiling, NOT calm",
+      "keywords": ["fear", "afraid", "scared", "terror", "panic", "threat", "dangerous", "catastrophe", "feeling dangerous"]
+    },
+    "worry": {
+      "priority": 90,
+      "prompt": "worried facial expression: furrowed brow, tight jaw, downward worried gaze, lips slightly parted or pressed, soft forehead lines of concern — NOT smiling",
+      "keywords": ["worry", "worried", "anticipatory", "what if", "nervous system", "stuck", "feels worse"]
+    },
+    "anxiety": {
+      "priority": 95,
+      "prompt": "anxious facial expression: restless eyes scanning, tense brows, shallow-breath mouth, self-conscious tightness around eyes and mouth, shoulders slightly raised — NOT a pleasant smile",
+      "keywords": ["anxious", "anxiety", "nervous", "uneasy", "restless", "heartbeat", "silence hits", "social anxiety", "safety habit", "safety habits"]
+    },
+    "embarrassment": {
+      "priority": 92,
+      "prompt": "embarrassed facial expression: eyes cast down or darting aside, flushed cheeks, awkward half-grimace, shy smile suppressed, head slightly ducked — NOT confident, NOT grinning",
+      "keywords": ["embarrass", "awkward", "awkwardness", "weird", "cringe", "blush", "stupid"]
+    },
+    "shame": {
+      "priority": 93,
+      "prompt": "ashamed facial expression: eyes downcast, brows knitted inward, lips pressed thin, closed-off posture in the face, heavy self-conscious look — NOT cheerful",
+      "keywords": ["shame", "ashamed", "humiliat", "judgment", "judged", "self-conscious", "monitoring"]
+    },
+    "overwhelm": {
+      "priority": 88,
+      "prompt": "overwhelmed facial expression: wide strained eyes, brows high and tense, mouth slightly open as if overloaded, mental-noise tension in the face — NOT relaxed",
+      "keywords": ["overwhelm", "crowded", "too much", "flood", "frozen", "crowded room"]
+    },
+    "dread": {
+      "priority": 89,
+      "prompt": "dreading facial expression: heavy brows, hollow uneasy eyes looking toward something upcoming, tight mouth, anticipatory dread written on the face — NOT smiling",
+      "keywords": ["dread", "upcoming", "party invite", "parking", "anticipat", "before an event"]
+    },
+    "sad": {
+      "priority": 80,
+      "prompt": "sad facial expression: soft downturned eyes and mouth corners, quiet heaviness, brows gently raised in the middle — NOT smiling",
+      "keywords": ["sad", "lonely", "missed the other", "drained", "exhausted", "hangover", "alone"]
+    },
+    "guilt": {
+      "priority": 85,
+      "prompt": "guilty facial expression: averted gaze, tight apologetic mouth, uneasy brows, face of guilty relief after avoiding something — NOT proud",
+      "keywords": ["guilt", "guilty", "canceling", "dismissed"]
+    },
+    "conflicted": {
+      "priority": 70,
+      "prompt": "conflicted facial expression: one brow higher, uncertain eyes, bitten or tight lip, wanting-and-avoiding tension in the face — NOT settled calm",
+      "keywords": ["conflict", "wanted but", "undecided", "vs shyness", "not the same"]
+    },
+    "paranoid": {
+      "priority": 91,
+      "prompt": "paranoid self-conscious expression: sideways glance, suspicious/worried eyes, tense cheeks, mind-reading fear on the face — NOT friendly open smile",
+      "keywords": ["mind reading", "they will think", "think i am weird", "stranger glance"]
+    },
+    "rehearsing": {
+      "priority": 86,
+      "prompt": "overthinking rehearsing expression: concentrated frown, eyes slightly unfocused inward, tight thoughtful mouth practicing words, performance-anxiety face — NOT relaxed chat face",
+      "keywords": ["rehears", "rehearsing", "draft every sentence", "before you speak", "script notes", "over-rehears"]
+    },
+    "fake_confidence": {
+      "priority": 94,
+      "prompt": "forced fake-confidence expression: stiff smile that does not reach the eyes, locked jaw under a performed grin, eyes still monitoring fear — visibly performed, NOT genuine ease",
+      "keywords": ["fake confidence", "performing confidence", "smile locked", "shoulders up", "voice a little louder"]
+    },
+    "phone_escape": {
+      "priority": 96,
+      "prompt": "avoidant phone-escape expression: eyes dropping to a phone screen mid-silence, tense micro-relief mixed with shame, brows tight — NOT engaged with people",
+      "keywords": ["phone grab", "check your phone", "hand goes to the screen", "grab your phone", "phone the second"]
+    },
+    "brave_tense": {
+      "priority": 55,
+      "prompt": "brave-but-tense facial expression: determined eyes, soft fear still visible, lips set for a small action, courage without fake grin — mild exposure face",
+      "keywords": ["sixty-second exposure", "60-second exposure", "tiny action without", "step two", "mildly hard", "drop one shield"]
+    },
+    "relieved": {
+      "priority": 60,
+      "prompt": "relieved facial expression: softer eyes, breath-out looseness in the mouth, gentle real smile beginning, tension dropping from brows — after the feared moment passed",
+      "keywords": ["relieved", "nothing dramatic happened", "survived", "outcome sentence", "nodded back", "that is the payoff"]
+    },
+    "hopeful": {
+      "priority": 50,
+      "prompt": "hopeful facial expression: open softer eyes, gentle upward mouth, brows relaxed, quiet optimism — still soft, not manic happy",
+      "keywords": ["small honest reps", "same size tomorrow", "retrain", "what actually helps"]
+    },
+    "explaining": {
+      "priority": 20,
+      "prompt": "clear teaching expression: engaged eyes to camera, calm authoritative brows, natural speaking mouth shape, warm but serious educator face — not goofy, not terrified",
+      "keywords": ["in the next few minutes", "step one", "step three", "step four", "this is education", "i'll name"]
+    },
+    "concerned": {
+      "priority": 65,
+      "prompt": "concerned caring expression: soft furrowed brow, empathetic eyes, gentle serious mouth — clinician-warm concern, not panic",
+      "keywords": ["severe", "clinician", "qualified", "shutting down your life", "not personal therapy"]
+    },
+    "curious": {
+      "priority": 40,
+      "prompt": "curious facial expression: slightly raised brows, interested forward gaze, soft open mouth, attentive learning face",
+      "keywords": ["what did you actually see", "observe", "notice:", "collecting three"]
+    },
+    "surprised": {
+      "priority": 45,
+      "prompt": "surprised facial expression: raised brows, widened eyes, open mouth — brief genuine surprise, not horror",
+      "keywords": ["surprise", "unexpected", "suddenly"]
+    },
+    "confident": {
+      "priority": 30,
+      "prompt": "quietly confident expression: steady calm eyes, relaxed brows, grounded soft smile that reaches the eyes — earned calm, not fake performance",
+      "keywords": ["confident wrap", "this week plan", "strategy"]
+    },
+    "calm": {
+      "priority": 15,
+      "prompt": "calm neutral-warm expression: soft relaxed brows, gentle closed-mouth or soft speaking mouth, peaceful eyes — only for true calm teach beats",
+      "keywords": ["title card", "invite a comment", "friendly close-up"]
+    },
+    "thinking": {
+      "priority": 45,
+      "prompt": "thinking facial expression: eyes slightly aside, one brow softened, thoughtful mouth, inward processing look",
+      "keywords": ["fear prediction", "write one", "one outcome", "predict"]
+    },
+    "avoidant": {
+      "priority": 87,
+      "prompt": "avoidant facial expression: eyes avoiding others, turned cheek, tense mouth, body language of wanting to leave — NOT open social smile",
+      "keywords": ["avoiding eye contact", "near the exit", "standing near the exit", "safety shield", "armor"]
+    }
+  }
+}

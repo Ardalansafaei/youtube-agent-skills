@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "rule": "Every still must stage a readable world that matches the psychology — lighting, space pressure, depth, and props. Never a bright empty pretty room on fear/shame/anxiety beats.",
+  "default": "explaining",
+  "by_expression": {
+    "fear": "atmosphere of threat: compressed space, slightly tilted uneasy framing, cooler shadows, social world feels unsafe, background people as soft judgmental silhouettes, no cozy cheerful living-room vibe",
+    "worry": "atmosphere of rumination: dimmer practical lamps, quiet lonely room, soft clock/phone glow, heavy stillness, muted colors, night-adjacent mood",
+    "anxiety": "atmosphere of social anxiety: busy but isolating space, host visually separated from blurred crowd, harsh or uneven light, slight tunnel/claustrophobic feel",
+    "embarrassment": "atmosphere of awkward exposure: too-bright public light on her face, cafe/hallway where she feels seen, warm practicals but socially exposing, flushed social heat",
+    "shame": "atmosphere of self-judgment: shadowed corners, host smaller in frame, others soft and distant, low fill light, inward closed space",
+    "overwhelm": "atmosphere of overload: dense crowd bokeh, overlapping chatter silhouettes, noisy visual layers, tight framing, sensory overload",
+    "dread": "atmosphere of before-the-event dread: waiting space (car/parking/hallway), clock pressure, muted cold light, empty anticipation",
+    "sad": "atmosphere of drained after-social: dim bedroom or empty couch, low energy lighting, quiet hangover stillness",
+    "guilt": "atmosphere of avoidance: couch/phone cancel scene, invite glow dismissed, soft guilty evening light",
+    "conflicted": "atmosphere of threshold: doorway she cannot cross, half-in half-out composition, split warm inside vs cooler outside",
+    "paranoid": "atmosphere of being watched: stranger glance geometry, jagged negative thought-space, cafe aisle freeze, spotlight-on-me feel",
+    "rehearsing": "atmosphere of over-preparation: mirror/hallway with sticky-note scripts, private practice space, obsessive clutter of lines",
+    "fake_confidence": "atmosphere of performed bravery: party or meeting where she forces a pose, stiff social stage lighting, smile vs fear mismatch in the room energy",
+    "phone_escape": "atmosphere of silence escape: mid-conversation dead-air, glowing phone as shield, people soft around her while she drops into the screen",
+    "avoidant": "atmosphere of exit-seeking: near door/wall/edge of room, body angled to leave, EXIT path visible, crowd elsewhere",
+    "brave_tense": "atmosphere of mild exposure: real low-stakes public place (cafe line/elevator/hallway), courage without party chaos, grounded documentary social space",
+    "relieved": "atmosphere after survival: softer breathable light, same public place now less threatening, tension dropping in the space",
+    "hopeful": "atmosphere of small progress: gentle morning or soft teach light, open space, calm forward energy without fake cheer",
+    "explaining": "atmosphere of clear teaching: readable educational set, soft cream/sage backdrop or whiteboard zone, calm studio depth",
+    "concerned": "atmosphere of clinical care: quiet therapy-like room, soft sage tones, safe serious light",
+    "curious": "atmosphere of noticing: outward attention in a real social space, details of others readable as soft bokeh",
+    "surprised": "atmosphere of sudden beat: quick visual jolt, brighter key, momentary open space",
+    "confident": "atmosphere of earned calm: stable composition, clean teach or plan board, steady warm light",
+    "calm": "atmosphere of soft invite: simple cream studio, gentle even light, low distraction",
+    "thinking": "atmosphere of inward prediction: notebook/desk pocket of focus, quiet side light, thinking corner"
+  }
+}

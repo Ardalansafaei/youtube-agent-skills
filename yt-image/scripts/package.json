@@ -2,7 +2,5 @@
   "name": "yt-image-scripts",
   "private": true,
   "type": "module",
-  "dependencies": {
-    "@heyputer/puter.js": "^2.6.5"
-  }
+  "dependencies": {}
 }

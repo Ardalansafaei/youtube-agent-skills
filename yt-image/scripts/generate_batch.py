@@ -13,19 +13,18 @@ from datetime import datetime
 from pathlib import Path
 
 GENERATE = Path(__file__).resolve().with_name("generate.py")
-GENERATE_THUMB_PUTER = Path(__file__).resolve().with_name("generate_thumb_puter.mjs")
 GENERATE_THUMB_OPENAI = Path(__file__).resolve().with_name("generate_thumb_openai.py")
 
 
-def _has_puter_token() -> bool:
-    if (os.environ.get("PUTER_AUTH_TOKEN") or "").strip():
+def _has_openai_key() -> bool:
+    if (os.environ.get("OPENAI_API_KEY") or "").strip():
         return True
     env_path = Path(__file__).resolve().parents[1] / ".env"
     if not env_path.is_file():
         return False
     for raw in env_path.read_text(encoding="utf-8").splitlines():
         line = raw.strip()
-        if line.startswith("PUTER_AUTH_TOKEN=") and line.split("=", 1)[1].strip().strip('"').strip("'"):
+        if line.startswith("OPENAI_API_KEY=") and line.split("=", 1)[1].strip().strip('"').strip("'"):
             return True
     return False
 
@@ -81,6 +80,12 @@ def main() -> int:
     )
     p.add_argument("--height", type=int, default=1080, help="Default 1080 for video stills")
     p.add_argument("--model", default="flux")
+    p.add_argument(
+        "--thumb-backend",
+        choices=("pollinations", "openai"),
+        default="pollinations",
+        help="Backend for thumb_* names (default Pollinations)",
+    )
     p.add_argument("--wait", type=float, default=0, help="Seconds between requests")
     p.add_argument("--stop-on-fail", action="store_true")
     args = p.parse_args()
@@ -105,40 +110,26 @@ def main() -> int:
             width, height = 1280, 720
         else:
             width, height = int(args.width), int(args.height)
-        # Thumbnails → Puter (free OpenAI GPT Image) preferred; OpenAI direct fallback
-        # Stills → Pollinations
-        if str(name).lower().startswith("thumb"):
-            if _has_puter_token() and GENERATE_THUMB_PUTER.is_file():
-                cmd = [
-                    "node",
-                    str(GENERATE_THUMB_PUTER),
-                    "--prompt",
-                    prompt,
-                    "--out",
-                    str(out),
-                    "--name",
-                    name,
-                    "--width",
-                    str(width),
-                    "--height",
-                    str(height),
-                    "--model",
-                    "gpt-image-2.5-flare",
-                ]
-                print(f"[{i}/{len(items)}] {name} (puter thumb)", flush=True)
-            else:
-                cmd = [
-                    sys.executable,
-                    str(GENERATE_THUMB_OPENAI),
-                    prompt,
-                    "--out",
-                    str(out),
-                    "--name",
-                    name,
-                    "--size",
-                    f"{width}x{height}",
-                ]
-                print(f"[{i}/{len(items)}] {name} (openai thumb)", flush=True)
+        # Stills + thumbs → Pollinations (thumbs 1280×720). Optional OpenAI thumb fallback.
+        use_openai_thumb = (
+            str(name).lower().startswith("thumb")
+            and args.thumb_backend == "openai"
+            and GENERATE_THUMB_OPENAI.is_file()
+            and _has_openai_key()
+        )
+        if use_openai_thumb:
+            cmd = [
+                sys.executable,
+                str(GENERATE_THUMB_OPENAI),
+                prompt,
+                "--out",
+                str(out),
+                "--name",
+                name,
+                "--size",
+                f"{width}x{height}",
+            ]
+            print(f"[{i}/{len(items)}] {name} (openai thumb)", flush=True)
         else:
             cmd = [
                 sys.executable,
@@ -157,7 +148,8 @@ def main() -> int:
             ]
             if item.get("seed") is not None:
                 cmd.extend(["--seed", str(item["seed"])])
-            print(f"[{i}/{len(items)}] {name}", flush=True)
+            kind = "thumb" if str(name).lower().startswith("thumb") else "still"
+            print(f"[{i}/{len(items)}] {name} ({kind})", flush=True)
         proc = subprocess.run(cmd, capture_output=True, text=True)
         entry = {
             "name": name,

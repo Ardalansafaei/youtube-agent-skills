@@ -1,5 +1,11 @@
 # YouTube agent config
 
+## Language (mandatory)
+- **All video output is English** — script, voiceover, titles, description, tags, on-screen text, thumb punch text.
+- User may chat in any language; do **not** ask language unless they explicitly request non-English.
+- TTS default: `en-US-AndrewNeural`
+- Research may include non-English markets for ideas; ship content in English.
+
 ## Pipeline
 1. User topic
 2. yt-viral — research + shared tags
@@ -16,8 +22,8 @@
 
 ## Character (mandatory)
 - Reference: `~/.claude/skills/yt-image/character/model-sheet.jpg`
-- Specs: `CHARACTER.md` + auto lock in `build_still_prompts.py`
-- 2D host: face/hair locked (dark wavy half-up bun); **outfit changes by scene** (`outfits.json`); optional pink brain sidekick
+- Specs: `CHARACTER.md` + `prompts.md` + auto lock in `build_still_prompts.py`
+- 3D Pixar host: face/hair locked; **scene + other people + outfit color + face emotion** change every beat (`scenes.json`, `outfits.json`, `expressions.json`, `atmospheres.json`)
 
 
 ## Image timing

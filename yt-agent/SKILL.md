@@ -8,6 +8,10 @@ description: >-
 
 # YouTube Agent
 
+## Language (mandatory)
+
+**English only** for script, VO, titles, SEO, on-screen text, thumbs — even if the user chats in another language. Do not ask which language. TTS: `en-US-AndrewNeural`. See `youtube-config/agent.md`.
+
 ## Order (mandatory)
 
 ```text
@@ -43,9 +47,9 @@ python "$env:USERPROFILE\.claude\skills\yt-image\scripts\generate_batch.py" "$im
 Upload thumbnails = **1280×720**. Never square/vertical for long-form unless user asks Shorts.
 
 **Character (mandatory):** locked host in `yt-image/character/` — **3D Pixar/Disney** face/hair from model sheet (not flat 2D, not photoreal).  
-**Outfit + environment change every beat** (see `outfits.json` + scene recipes). Anti-repetition: vary camera/lighting/action.  
-**Thumbnails:** Puter.js `txt2img` (GPT Image via User-Pays) — `generate_thumb_puter.mjs`; collage + ≤3-word punch text. Never Pollinations for thumbs.  
-**Stills API:** `yt-image/POLLINATIONS_KEYS.md` (rotate on 402). **Thumb auth:** `PUTER_AUTH_TOKEN` in `yt-image/.env` from puter.com/dashboard#account (local only).
+**Prompt grammar:** follow `yt-image/prompts.md` — scene matching the spoken beat, other people when social, outfit **color** change, atmosphere, face emotion (`scenes.json` / `outfits.json` / `expressions.json` / `atmospheres.json`).  
+**Thumbnails:** Pollinations **1280×720** via `generate_batch.py` (`thumb_*` lines); collage + ≤3-word punch text.  
+**Stills + thumbs API:** `yt-image/POLLINATIONS_KEYS.md` / `.env` (rotate on 402).
 
 Example: ~60s script → ~10 stills; ~10 min → ~100 stills.  
 On pollen `402`, stop and report how many finished — keep `prompts.txt`.

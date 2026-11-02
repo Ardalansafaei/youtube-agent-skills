@@ -1,0 +1,271 @@
+{
+  "rule": "Every still needs a DISTINCT place matching the spoken beat, visible wardrobe color change vs previous still, and other people when the story is social.",
+  "beats": [
+    {
+      "keys": ["not shy", "safety habits", "every room feeling dangerous"],
+      "place": "party",
+      "environment": "crowded house-party living room, warm string lights, host pressed against the wall while the room feels threatening",
+      "people": "many soft-focus guests laughing and mingling in groups behind and beside her — she is clearly not alone",
+      "action": "clutching her sleeve, scanning the room as if every corner is unsafe",
+      "lighting": "warm party bokeh with uneven social lighting"
+    },
+    {
+      "keys": ["60-second", "sixty-second exposure", "without a party invite"],
+      "place": "cafe",
+      "environment": "outside a small neighborhood cafe entrance on a quiet street, low-stakes public setting",
+      "people": "two pedestrians walking past and a customer exiting the cafe door in soft focus",
+      "action": "standing on the sidewalk preparing for a tiny exposure, notebook half-open",
+      "lighting": "overcast soft daylight"
+    },
+    {
+      "keys": ["quiet personality", "quiet vs", "quiet can feel fine"],
+      "place": "bookstore",
+      "environment": "calm indie bookstore aisle, quiet personality feels okay here",
+      "people": "one distant shopper browsing shelves in soft focus",
+      "action": "browsing a book calmly, shoulders relaxed compared to threat scenes",
+      "lighting": "warm bookstore lamps"
+    },
+    {
+      "keys": ["threat", "ordinary moments", "joining a conversation", "eye contact"],
+      "place": "cafe",
+      "environment": "busy cafe seating area where ordinary social moments feel like threat",
+      "people": "a small group at a nearby table mid-conversation, one person glancing toward her",
+      "action": "frozen mid-step, avoiding joining the conversation, eyes flicking away",
+      "lighting": "harsh-ish cafe daylight through windows"
+    },
+    {
+      "keys": ["safety habit", "checking your phone", "standing near the exit", "laughing a little"],
+      "place": "party",
+      "environment": "packed living-room party near a lit EXIT doorway",
+      "people": "blurred guests chatting in clusters; someone by the snack table",
+      "action": "half-turned toward the exit while fake-laughing too quickly, phone half-raised",
+      "lighting": "party bokeh string lights"
+    },
+    {
+      "keys": ["shield", "nervous system", "feared moment", "survived without"],
+      "place": "hallway",
+      "environment": "narrow office hallway after a hard social moment, shield metaphor via closed-off body",
+      "people": "two coworkers walking past in soft focus, still present in the corridor",
+      "action": "holding an invisible emotional shield posture, learning blocked",
+      "lighting": "cool fluorescent hallway light"
+    },
+    {
+      "keys": ["phone grab", "silence hits", "hand goes to the screen", "escape the pause"],
+      "place": "cafe",
+      "environment": "cafe table during an awkward silence in a conversation",
+      "people": "a friend or acquaintance sitting across from her waiting; other patrons softly blurred",
+      "action": "eyes dropping to phone the second silence hits, escaping the pause",
+      "lighting": "warm cafe practicals, phone screen glow on her face"
+    },
+    {
+      "keys": ["rehearsal", "draft every sentence", "before you speak", "performance review"],
+      "place": "bathroom_mirror",
+      "environment": "bathroom mirror before re-entering a lounge, sticky mental scripts",
+      "people": "through the open door, soft-focus people socializing in the lounge beyond",
+      "action": "rehearsing sentences under her breath at the mirror, missing real connection",
+      "lighting": "cool mirror vanity light"
+    },
+    {
+      "keys": ["fake confidence", "smile locked", "shoulders up", "monitoring"],
+      "place": "meeting",
+      "environment": "standing networking circle at a workplace mixer / glass meeting lobby",
+      "people": "three colleagues in the circle facing her; more attendees blurred behind",
+      "action": "stiff performed smile, shoulders up, voice forced while still self-monitoring",
+      "lighting": "bright lobby glass daylight"
+    },
+    {
+      "keys": ["buddy", "drink", "perfect plan", "armor", "safety kit"],
+      "place": "bar",
+      "environment": "evening bar or casual hangout, she only came with armor",
+      "people": "a buddy standing as a shield beside her; crowded bar patrons behind them",
+      "action": "half-hiding behind the buddy with a drink in hand, not true exposure",
+      "lighting": "dim warm bar neon and practicals"
+    },
+    {
+      "keys": ["mildly hard", "wedding speech", "three or four", "drop one shield"],
+      "place": "bookstore",
+      "environment": "short bookstore checkout line — mild 3–4/10 social difficulty, not a wedding speech",
+      "people": "one cashier and one customer ahead in line, clearly present",
+      "action": "waiting in line ready to drop one small shield",
+      "lighting": "soft store overhead light"
+    },
+    {
+      "keys": ["cafe line", "elevator", "hallway at work", "low-stakes place"],
+      "place": "elevator",
+      "environment": "workplace elevator interior as a low-stakes exposure place she already uses",
+      "people": "two other riders standing quietly in the elevator with her",
+      "action": "choosing this everyday place for a sixty-second practice",
+      "lighting": "flat elevator cabin light"
+    },
+    {
+      "keys": ["fear prediction", "write one", "they will think", "weird"],
+      "place": "cafe",
+      "environment": "cafe counter ledge / small standing table before ordering",
+      "people": "barista behind the counter and one customer in queue, soft focus",
+      "action": "writing one fear prediction line in a pocket notebook",
+      "lighting": "daylight cafe window light"
+    },
+    {
+      "keys": ["tiny action", "nod", "clear hello", "without the usual shield"],
+      "place": "hallway",
+      "environment": "office hallway crossing paths with a coworker",
+      "people": "a coworker approaching for a brief greeting — must be visible and in-focus enough to read the hello",
+      "action": "short eye contact and a clear hello / nod without phone shield",
+      "lighting": "bright hallway windows"
+    },
+    {
+      "keys": ["stay for sixty", "sixty seconds after", "catastrophe", "what did you actually see"],
+      "place": "elevator",
+      "environment": "staying inside the elevator after the tiny hello, not rushing away",
+      "people": "the same two riders still present; she remains for the full minute",
+      "action": "standing still, noticing what actually happened instead of catastrophizing",
+      "lighting": "elevator cabin light, slightly tense"
+    },
+    {
+      "keys": ["outcome sentence", "not a pep talk", "nodded back", "looked at their phone", "facts retrain"],
+      "place": "cafe",
+      "environment": "cafe table after the micro-exposure, writing one outcome fact",
+      "people": "other patrons in background; the person she greeted may be visible leaving or at counter",
+      "action": "writing a factual outcome line, not a pep talk",
+      "lighting": "soft afternoon cafe light"
+    },
+    {
+      "keys": ["payoff", "personality transplant", "honest note", "mild situation"],
+      "place": "outdoor",
+      "environment": "city sidewalk bench outside the cafe after the practice",
+      "people": "passersby in soft focus keeping the world populated",
+      "action": "closing the notebook with quiet relief — one dropped shield, one note",
+      "lighting": "golden hour outdoor rim light"
+    },
+    {
+      "keys": ["small honest reps", "brave nights", "once today", "tomorrow"],
+      "place": "outdoor",
+      "environment": "morning street near work — small daily reps, not one brave night a year",
+      "people": "commuters and a street vendor soft in background",
+      "action": "walking into the day ready for another same-size practice",
+      "lighting": "crisp morning daylight"
+    },
+    {
+      "keys": ["comments", "drop first", "buddy shield", "next exposure"],
+      "place": "studio",
+      "environment": "simple cream teaching set inviting a comment, still story-linked",
+      "people": "none required — direct to camera; optional tiny soft silhouette of a prior social scene in a framed picture behind her",
+      "action": "asking which safety habit they drop first",
+      "lighting": "soft studio key light"
+    },
+    {
+      "keys": ["education", "not personal therapy", "clinician", "qualified"],
+      "place": "therapy",
+      "environment": "calm therapy office with armchair and soft sage tones — educational disclaimer",
+      "people": "a clinician silhouette or soft-focus therapist figure across from empty chair optional; keep respectful and non-diagnostic",
+      "action": "sincere disclaimer gesture toward getting qualified help if severe",
+      "lighting": "soft sage therapy-room daylight"
+    },
+    {
+      "keys": ["conversation", "missed the other person", "connection"],
+      "place": "cafe",
+      "environment": "two-person cafe conversation that became a performance review",
+      "people": "the other person sitting across from her, clearly present and waiting",
+      "action": "stuck in her head drafting lines while the other person is right there",
+      "lighting": "warm cafe table lamp"
+    },
+    {
+      "keys": ["crowd", "crowded", "party invite", "social gathering"],
+      "place": "party",
+      "environment": "dense social gathering, host on the edge not mingling",
+      "people": "dozens of soft-focus guests filling the frame behind her",
+      "action": "observing from the wall, overwhelmed by the crowd",
+      "lighting": "party bokeh"
+    },
+    {
+      "keys": ["office", "work", "coworkers", "meeting room"],
+      "place": "office",
+      "environment": "open-plan office with desks and monitors",
+      "people": "several coworkers at desks and one standing conversation nearby",
+      "action": "navigating a normal work social moment",
+      "lighting": "harsh fluorescent office lighting"
+    }
+  ],
+  "place_fallbacks": {
+    "party": {
+      "environment": "crowded house party living room",
+      "people": "many soft-focus guests mingling",
+      "lighting": "warm party bokeh"
+    },
+    "cafe": {
+      "environment": "busy cafe interior with counters and tables",
+      "people": "barista and seated customers in soft focus",
+      "lighting": "cafe window daylight"
+    },
+    "office": {
+      "environment": "modern open office",
+      "people": "coworkers at desks in soft focus",
+      "lighting": "fluorescent office light"
+    },
+    "meeting": {
+      "environment": "glass meeting room / mixer lobby",
+      "people": "colleagues in conversation nearby",
+      "lighting": "bright lobby light"
+    },
+    "hallway": {
+      "environment": "workplace hallway with doors and windows",
+      "people": "one or two coworkers passing",
+      "lighting": "hallway daylight"
+    },
+    "elevator": {
+      "environment": "elevator cabin",
+      "people": "one or two other riders",
+      "lighting": "elevator cabin light"
+    },
+    "home": {
+      "environment": "cozy apartment living room",
+      "people": "alone unless beat needs a video-call face on a laptop",
+      "lighting": "warm home lamp"
+    },
+    "studio": {
+      "environment": "clean cream teaching backdrop",
+      "people": "none — direct to camera",
+      "lighting": "soft studio light"
+    },
+    "outdoor": {
+      "environment": "city sidewalk",
+      "people": "passersby in soft focus",
+      "lighting": "daylight"
+    },
+    "therapy": {
+      "environment": "calm therapy office",
+      "people": "optional soft clinician figure",
+      "lighting": "soft daylight"
+    },
+    "bookstore": {
+      "environment": "bookstore aisle / checkout",
+      "people": "shoppers or cashier present",
+      "lighting": "warm store lamps"
+    },
+    "bar": {
+      "environment": "casual bar hangout",
+      "people": "buddy plus bar patrons",
+      "lighting": "dim warm bar light"
+    },
+    "bathroom_mirror": {
+      "environment": "bathroom mirror with lounge visible through door",
+      "people": "people socializing beyond the doorway",
+      "lighting": "vanity light"
+    },
+    "parking": {
+      "environment": "parking lot beside a venue",
+      "people": "distant attendees walking in",
+      "lighting": "late afternoon outdoor light"
+    },
+    "bed": {
+      "environment": "bedroom after a social event",
+      "people": "alone",
+      "lighting": "dim night lamp"
+    },
+    "study": {
+      "environment": "study desk with notes",
+      "people": "alone or soft roommate silhouette",
+      "lighting": "desk lamp"
+    }
+  }
+}
