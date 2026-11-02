@@ -1,5 +1,14 @@
 # YouTube agent config
 
+## Runtime (mandatory)
+
+Long-form videos are **6–12 minutes** of spoken runtime at 150 WPM.
+
+- Spoken words only (strip `[ON SCREEN]` and other cues): **900–1800 words**.
+- Aim near **8–10 minutes** (~1200–1500 words) unless the idea is thin or dense.
+- Under 6 minutes: add beats until the promise is fully taught. Over 12: cut repetition, not the payoff.
+- Shorts are exempt only when the user explicitly asks for a Short.
+
 ## Language (mandatory)
 - **All video output is English** — script, voiceover, titles, description, tags, on-screen text, thumb punch text.
 - User may chat in any language; do **not** ask language unless they explicitly request non-English.

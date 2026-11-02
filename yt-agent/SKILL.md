@@ -8,6 +8,10 @@ description: >-
 
 # YouTube Agent
 
+## Runtime (mandatory)
+
+Long-form spoken runtime is **6–12 minutes** at 150 WPM (**900–1800 spoken words**). Count words after stripping `[ON SCREEN]` cues. Prefer ~8–10 minutes. If the draft is outside that band, rewrite before TTS and stills. Shorts only when the user asks for a Short. See `youtube-config/agent.md`.
+
 ## Language (mandatory)
 
 **English only** for script, VO, titles, SEO, on-screen text, thumbs — even if the user chats in another language. Do not ask which language. TTS: `en-US-AndrewNeural`. See `youtube-config/agent.md`.
@@ -51,7 +55,7 @@ Upload thumbnails = **1280×720**. Never square/vertical for long-form unless us
 **Thumbnails:** Pollinations **1280×720** via `generate_batch.py` (`thumb_*` lines); collage + ≤3-word punch text.  
 **Stills + thumbs API:** `yt-image/POLLINATIONS_KEYS.md` / `.env` (rotate on 402).
 
-Example: ~60s script → ~10 stills; ~10 min → ~100 stills.  
+Example: 6 min → ~60 stills; 12 min → ~120 stills. Do not ship a long-form script outside 6–12 minutes.  
 On pollen `402`, stop and report how many finished — keep `prompts.txt`.
 
 ## Other pipelines
